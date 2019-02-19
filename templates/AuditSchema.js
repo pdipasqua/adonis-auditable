@@ -7,6 +7,7 @@ class AuditSchema extends Schema {
     this.create('audits', (table) => {
       table.increments()
       table.uuid('user_uuid').unsigned().references('uuid').inTable('users')
+      table.uuid('customer_uuid').unsigned().references('uuid').inTable('customers')
       table.uuid('auditable_uuid').notNullable().index()
       table.string('auditable').notNullable()
       table.string('event').notNullable()
