@@ -128,8 +128,8 @@ async function createAudit (event, {request, auth}, auditable, auditableId, oldD
 
   // save audit
   await Audit.create({
-    user_id: userId,
-    auditable_id: auditableId,
+    user_uuid: userId,
+    auditable_uuid: auditableId,
     auditable,
     event,
     url,
